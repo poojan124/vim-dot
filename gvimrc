@@ -10,7 +10,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
-Bundle 'danilo-augusto/vim-afterglow'
+Plugin 'danilo-augusto/vim-afterglow'
+Plugin 'jceb/vim-orgmode'
 call vundle#end()            " required
 """"""""""""""""""VUNDLE END"""""""""""""""""""""""""""
 filetype plugin indent on    " required
