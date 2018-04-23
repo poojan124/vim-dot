@@ -29,7 +29,7 @@ set number  " enable line numbering
 
 set background=dark
 syntax on
-colorscheme afterglow
+colorscheme afterglow "no
 
 "maximize start gvim works well for linux
 if has("gui_running")
@@ -45,4 +45,3 @@ else
     set columns=100
   endif
 endif
-
