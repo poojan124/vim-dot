@@ -1,10 +1,18 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
+set noundofile
+set nobackup
+set nowritebackup
 
 " set the runtime path to include Vundle and initialize
 """""""""""""""""""" VUNDLE AREA"""""""""""""""""""""""
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+if has('win32')
+	set rtp+=$HOME/.vim/bundle/Vundle.vim/
+	call vundle#begin('$HOME/.vim/bundle/')
+else
+	set rtp+=~/.vim/bundle/Vundle.vim
+	call vundle#begin()
+endif
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/syntastic'
@@ -16,8 +24,6 @@ call vundle#end()            " required
 """"""""""""""""""VUNDLE END"""""""""""""""""""""""""""
 filetype plugin indent on    " required
 set backspace=2
-set noundofile
-set nobackup
 
 "spacing and tab
 set tabstop=4 	    "tabspace
@@ -31,6 +37,9 @@ set number  " enable line numbering
 set background=dark
 syntax on
 colorscheme afterglow "no
+
+set nobackup
+set nowritebackup
 
 "maximize start gvim works well for linux
 if has("gui_running")
