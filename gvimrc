@@ -15,6 +15,7 @@ else
 endif
 
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'hdima/python-syntax'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
@@ -22,7 +23,9 @@ Plugin 'danilo-augusto/vim-afterglow'
 Plugin 'jceb/vim-orgmode'
 call vundle#end()            " required
 """"""""""""""""""VUNDLE END"""""""""""""""""""""""""""
+
 filetype plugin indent on    " required
+syntax on
 set backspace=2
 
 "spacing and tab
@@ -35,7 +38,7 @@ set belloff=all     "no beeping
 set number  " enable line numbering   
 
 set background=dark
-syntax on
+
 colorscheme afterglow "no
 
 set nobackup
