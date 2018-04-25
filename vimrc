@@ -40,7 +40,7 @@ set number  " enable line numbering
 set background=dark
 
 colorscheme afterglow "no
-
+set showcmd "show command in cl
 set nobackup
 set nowritebackup
 
