@@ -31,6 +31,7 @@ set number  " enable line numbering
 set background=dark
 syntax on
 colorscheme afterglow "no
+set showcmd "this will show command in line
 
 "maximize start gvim works well for linux
 if has("gui_running")
