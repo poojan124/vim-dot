@@ -1,0 +1,2 @@
+for windows set $VIM = path_to_your_vim_config_files
+and $VIMRUNTIME = path_to_your_vim_instalation
