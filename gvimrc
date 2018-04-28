@@ -3,8 +3,9 @@ filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 """""""""""""""""""" VUNDLE AREA"""""""""""""""""""""""
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+
+set rtp+=$HOME/.vim/bundle/Vundle.vim/   "set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin('$HOME/.vim/bundle/')  "call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/syntastic'
