@@ -45,6 +45,26 @@ set showcmd "this will show command in line
 set nobackup
 set nowritebackup
 
+" Make vim use the system clipboard:
+set clipboard^=unnamed,unnamedplus
+
+
+"++++++++++++++++++++folding++++++++++++++++++++++++++++
+"this will save and load fold when closing
+augroup AutoSaveFolds
+  autocmd BufWinLeave * mkview
+  autocmd BufWinEnter * silent loadview
+augroup END
+
+setlocal foldmethod=expr
+setlocal foldexpr=(getline(v:lnum)=~'^$')?-1:((indent(v:lnum)<indent(v:lnum+1))?('>'.indent(v:lnum+1)):indent(v:lnum))
+set foldtext=getline(v:foldstart)
+set fillchars=fold:\ "(there's a space after that \)
+highlight Folded ctermfg=DarkGreen ctermbg=Black
+
+"+++++++++++++++++++end-folding+++++++++++++++++++++++++
+
+
 "maximize start gvim works well for linux
 if has('win32')
     au GUIEnter * simalt ~x
