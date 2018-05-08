@@ -3,7 +3,7 @@ filetype off                  " required
 set noundofile
 set nobackup
 set nowritebackup
-
+set noswapfile
 " set the runtime path to include Vundle and initialize
 """""""""""""""""""" VUNDLE AREA"""""""""""""""""""""""
 if has('win32')
@@ -40,21 +40,43 @@ set number  " enable line numbering
 set background=dark
 
 colorscheme afterglow "no
-set showcmd "show command in cl
-set nobackup
-set nowritebackup
+set showcmd "this will show command in line
+
+" Make vim use the system clipboard:
+set clipboard^=unnamed,unnamedplus
+
+
+"++++++++++++++++++++folding++++++++++++++++++++++++++++
+"this will save and load fold when closing
+"augroup AutoSaveFolds
+ " autocmd BufWinLeave * mkview
+  "autocmd BufWinEnter * silent loadview
+"augroup END
+
+"setlocal foldmethod=expr
+"setlocal foldexpr=(getline(v:lnum)=~'^$')?-1:((indent(v:lnum)<indent(v:lnum+1))?('>'.indent(v:lnum+1)):indent(v:lnum))
+"set foldtext=getline(v:foldstart)
+"set fillchars=fold:\ "(there's a space after that \)
+"highlight Folded ctermfg=DarkGreen ctermbg=Black
+
+"+++++++++++++++++++end-folding+++++++++++++++++++++++++
+
 
 "maximize start gvim works well for linux
-if has("gui_running")
-  " GUI is running or is about to start.
-  " Maximize gvim window (for an alternative on Windows, see simalt below).
-  set lines=999 columns=999
+if has('win32')
+    au GUIEnter * simalt ~x
 else
-  " This is console Vim.
-  if exists("+lines")
-    set lines=50
-  endif
-  if exists("+columns")
-    set columns=100
-  endif
+    if has("gui_running")
+      " GUI is running or is about to start.
+      " Maximize gvim window (for an alternative on Windows, see simalt below).
+      set lines=999 columns=999
+    else
+      " This is console Vim.
+      if exists("+lines")
+        set lines=50
+      endif
+      if exists("+columns")
+        set columns=100
+      endif
+    endif
 endif

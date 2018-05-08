@@ -3,7 +3,7 @@ filetype off                  " required
 set noundofile
 set nobackup
 set nowritebackup
-
+set noswapfile
 " set the runtime path to include Vundle and initialize
 """""""""""""""""""" VUNDLE AREA"""""""""""""""""""""""
 if has('win32')
@@ -42,25 +42,22 @@ set background=dark
 colorscheme afterglow "no
 set showcmd "this will show command in line
 
-set nobackup
-set nowritebackup
-
 " Make vim use the system clipboard:
 set clipboard^=unnamed,unnamedplus
 
 
 "++++++++++++++++++++folding++++++++++++++++++++++++++++
 "this will save and load fold when closing
-augroup AutoSaveFolds
-  autocmd BufWinLeave * mkview
-  autocmd BufWinEnter * silent loadview
-augroup END
+"augroup AutoSaveFolds
+"  autocmd BufWinLeave * mkview
+"  autocmd BufWinEnter * silent loadview
+"augroup END
 
-setlocal foldmethod=expr
-setlocal foldexpr=(getline(v:lnum)=~'^$')?-1:((indent(v:lnum)<indent(v:lnum+1))?('>'.indent(v:lnum+1)):indent(v:lnum))
-set foldtext=getline(v:foldstart)
-set fillchars=fold:\ "(there's a space after that \)
-highlight Folded ctermfg=DarkGreen ctermbg=Black
+"setlocal foldmethod=expr
+"setlocal foldexpr=(getline(v:lnum)=~'^$')?-1:((indent(v:lnum)<indent(v:lnum+1))?('>'.indent(v:lnum+1)):indent(v:lnum))
+"set foldtext=getline(v:foldstart)
+"set fillchars=fold:\ "(there's a space after that \)
+"highlight Folded ctermfg=DarkGreen ctermbg=Black
 
 "+++++++++++++++++++end-folding+++++++++++++++++++++++++
 
