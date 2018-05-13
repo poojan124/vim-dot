@@ -19,7 +19,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'hdima/python-syntax'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
-Plugin 'bling/vim-airline'
 Plugin 'danilo-augusto/vim-afterglow'
 Plugin 'jceb/vim-orgmode'
 call vundle#end()            " required
@@ -54,7 +53,7 @@ imap <C-j> <Up>
 imap <C-h> <Left>
 imap <C-k> <Down>
 imap <C-l> <Right>
-
+map <C-S-p> :exec "!python %" <CR> " ctrl+shift+p to run current python file
 " normal copy/paste
 vmap <C-c> y<Esc>i
 vmap <C-x> d<Esc>i
