@@ -45,6 +45,27 @@ set showcmd "this will show command in line
 " Make vim use the system clipboard:
 set clipboard^=unnamed,unnamedplus
 
+set colorcolumn=80 " verticle line for danger zone
+highlight ColorColumn ctermbg=red guibg=red
+
+"++++++++++++++++++++++mapping only area+++++++++++++++"
+imap <C-j> <Up>
+imap <C-h> <Left>
+imap <C-k> <Down>
+imap <C-l> <Right>
+
+" normal copy/paste
+vmap <C-c> y<Esc>i
+vmap <C-x> d<Esc>i
+imap <C-v> <Esc>pi
+imap <C-y> <Esc>ddi
+map <C-z> <Esc>
+imap <C-z> <Esc>ui
+" Select all text
+nmap <C-a> ggVG
+
+"++++++++++++++++++++++ends++++++++++++++++++++++++++++"
+
 
 "++++++++++++++++++++folding++++++++++++++++++++++++++++
 "this will save and load fold when closing
