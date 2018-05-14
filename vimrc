@@ -38,10 +38,10 @@ set showcmd "this will show command in line
 
 " Make vim use the system clipboard:
 set clipboard^=unnamed,unnamedplus
-
 set colorcolumn=80 " verticle line for danger zone
 highlight ColorColumn ctermbg=red guibg=red
 
+let g:SyntasticToggleMod = 0
 "++++++++++++++++++++++mapping only area+++++++++++++++"
 imap <C-j> <Up>
 imap <C-h> <Left>
