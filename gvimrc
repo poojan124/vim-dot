@@ -53,7 +53,10 @@ imap <C-j> <Up>
 imap <C-h> <Left>
 imap <C-k> <Down>
 imap <C-l> <Right>
-map <C-S-p> :exec "!python %" <CR> " ctrl+shift+p to run current python file
+
+" ctrl+shift+p to run current python file
+map <C-S-p> :!python %<CR>
+map <C-S-p> :!bash<CR>
 " normal copy/paste
 vmap <C-c> y<Esc>i
 vmap <C-x> d<Esc>i

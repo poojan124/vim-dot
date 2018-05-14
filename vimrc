@@ -28,12 +28,6 @@ filetype plugin indent on    " required
 syntax on
 set backspace=2
 
-"spacing and tab
-set tabstop=4 	    "tabspace
-set shiftwidth=4    "when > used to tab it use 4 width of space
-set autoindent      "autoindent when enter new blok
-set expandtab 	    "this will change 1 tab = 4 space
-
 set belloff=all     "no beeping
 set number  " enable line numbering   
 
@@ -53,7 +47,10 @@ imap <C-j> <Up>
 imap <C-h> <Left>
 imap <C-k> <Down>
 imap <C-l> <Right>
-map <C-S-p> :exec "!python %" <CR> " ctrl+shift+p to run current python file
+
+" ctrl+shift+p to run current python file
+map <C-S-p> :!python %<CR>
+map <C-b> :!bash<CR>
 " normal copy/paste
 vmap <C-c> y<Esc>i
 vmap <C-x> d<Esc>i
