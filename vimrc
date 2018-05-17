@@ -21,9 +21,11 @@ Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
 Plugin 'danilo-augusto/vim-afterglow'
 Plugin 'jceb/vim-orgmode'
+"Plugin 'davidhalter/jedi-vim'
+Plugin 'ervandew/supertab'
 call vundle#end()            " required
 """"""""""""""""""VUNDLE END"""""""""""""""""""""""""""
-
+let g:deoplete#sources#jedi#python_path = '/usr/local/bin/python3.6'
 filetype plugin indent on    " required
 syntax on
 set backspace=2
@@ -42,6 +44,8 @@ set clipboard^=unnamed,unnamedplus
 set colorcolumn=80 " verticle line for danger zone
 highlight ColorColumn ctermbg=red guibg=red
 
+"following line will disable syntax checnking 
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 "++++++++++++++++++++++mapping only area+++++++++++++++"
 imap <C-j> <Up>
 imap <C-h> <Left>
