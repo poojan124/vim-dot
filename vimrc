@@ -27,7 +27,7 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 syntax on
 set backspace=2
-
+set backspace=indent,eol,start
 set belloff=all     "no beeping
 set number  " enable line numbering   
 
@@ -82,7 +82,9 @@ nmap <C-a> ggVG
 
 "maximize start gvim works well for linux
 if has('win32')
-    au GUIEnter * simalt ~x
+    if has("gui running")
+        au GUIEnter * simalt ~x
+    endif
 else
     if has("gui_running")
       " GUI is running or is about to start.

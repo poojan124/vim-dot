@@ -27,7 +27,7 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 syntax on
 set backspace=2
-
+set guifont=Lucida_Console:h11
 "spacing and tab
 set tabstop=4 	    "tabspace
 set shiftwidth=4    "when > used to tab it use 4 width of space
