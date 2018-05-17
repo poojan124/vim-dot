@@ -21,6 +21,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
 Plugin 'danilo-augusto/vim-afterglow'
 Plugin 'jceb/vim-orgmode'
+"Plugin ''
 call vundle#end()            " required
 """"""""""""""""""VUNDLE END"""""""""""""""""""""""""""
 
@@ -55,8 +56,12 @@ imap <C-k> <Down>
 imap <C-l> <Right>
 
 " ctrl+shift+p to run current python file
-map <C-S-p> :!python %<CR>
-map <C-S-p> :!bash<CR>
+map <C-S-p> :w<CR> :!python %<CR>
+if has('win32')
+    map <C-b> :!cmd.exe<CR>
+else
+    map <C-b> :!bash<CR>
+endif
 " normal copy/paste
 vmap <C-c> y<Esc>i
 vmap <C-x> d<Esc>i
