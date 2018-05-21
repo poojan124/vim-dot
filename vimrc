@@ -21,13 +21,15 @@ Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
 Plugin 'danilo-augusto/vim-afterglow'
 Plugin 'jceb/vim-orgmode'
+"Plugin 'davidhalter/jedi-vim'
+Plugin 'ervandew/supertab'
 call vundle#end()            " required
 """"""""""""""""""VUNDLE END"""""""""""""""""""""""""""
-
+let g:deoplete#sources#jedi#python_path = '/usr/local/bin/python3.6'
 filetype plugin indent on    " required
 syntax on
 set backspace=2
-
+set backspace=indent,eol,start
 set belloff=all     "no beeping
 set number  " enable line numbering   
 
@@ -40,7 +42,7 @@ set showcmd "this will show command in line
 set clipboard^=unnamed,unnamedplus
 set colorcolumn=80 " verticle line for danger zone
 highlight ColorColumn ctermbg=red guibg=red
-
+"following line will disable syntax checking
 let g:SyntasticToggleMod = 0
 "++++++++++++++++++++++mapping only area+++++++++++++++"
 imap <C-j> <Up>
@@ -49,8 +51,13 @@ imap <C-k> <Down>
 imap <C-l> <Right>
 
 " ctrl+shift+p to run current python file
-map <C-S-p> :!python %<CR>
-map <C-b> :!bash<CR>
+map <C-S-p> :w<CR> :!python %<CR>
+if has('win32')
+    map <C-b> :!cmd.exe<CR>
+else
+    map <C-b> :!bash<CR>
+endif
+
 " normal copy/paste
 vmap <C-c> y<Esc>i
 vmap <C-x> d<Esc>i
@@ -82,7 +89,9 @@ nmap <C-a> ggVG
 
 "maximize start gvim works well for linux
 if has('win32')
-    au GUIEnter * simalt ~x
+    if has("gui running")
+        au GUIEnter * simalt ~x
+    endif
 else
     if has("gui_running")
       " GUI is running or is about to start.

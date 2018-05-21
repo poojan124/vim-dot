@@ -21,13 +21,18 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
 Plugin 'danilo-augusto/vim-afterglow'
 Plugin 'jceb/vim-orgmode'
+"Plugin 'davidhalter/jedi-vim'
+Plugin 'ervandew/supertab'
+"Plugin 'Valloric/YouCompleteMe'
 call vundle#end()            " required
 """"""""""""""""""VUNDLE END"""""""""""""""""""""""""""
-
+let g:deoplete#sources#jedi#python_path = '/usr/local/bin/python3.6'
 filetype plugin indent on    " required
 syntax on
 set backspace=2
-
+if has('win32')
+    set guifont=Lucida_Console:h11
+endif
 "spacing and tab
 set tabstop=4 	    "tabspace
 set shiftwidth=4    "when > used to tab it use 4 width of space
@@ -48,6 +53,8 @@ set clipboard^=unnamed,unnamedplus
 set colorcolumn=80 " verticle line for danger zone
 highlight ColorColumn ctermbg=red guibg=red
 
+"following line will disable Syntaxt check
+autocmd VimEnter * SyntasticToggleMode
 "++++++++++++++++++++++mapping only area+++++++++++++++"
 imap <C-j> <Up>
 imap <C-h> <Left>
@@ -55,8 +62,12 @@ imap <C-k> <Down>
 imap <C-l> <Right>
 
 " ctrl+shift+p to run current python file
-map <C-S-p> :!python %<CR>
-map <C-S-p> :!bash<CR>
+map <C-S-p> :w<CR> :!python %<CR>
+if has('win32')
+    map <C-b> :!cmd.exe<CR>
+else
+    map <C-b> :!bash<CR>
+endif
 " normal copy/paste
 vmap <C-c> y<Esc>i
 vmap <C-x> d<Esc>i
