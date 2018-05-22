@@ -18,22 +18,19 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'hdima/python-syntax'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
-Plugin 'bling/vim-airline'
 Plugin 'danilo-augusto/vim-afterglow'
-Plugin 'jceb/vim-orgmode'
-"Plugin 'davidhalter/jedi-vim'
 Plugin 'ervandew/supertab'
-"Plugin 'Valloric/YouCompleteMe'
 call vundle#end()            " required
 """"""""""""""""""VUNDLE END"""""""""""""""""""""""""""
-let g:deoplete#sources#jedi#python_path = '/usr/local/bin/python3.6'
 filetype plugin indent on    " required
 syntax on
-set backspace=2
+
 if has('win32')
     set guifont=Lucida_Console:h11
 endif
+
 "spacing and tab
+set backspace=2
 set tabstop=4 	    "tabspace
 set shiftwidth=4    "when > used to tab it use 4 width of space
 set autoindent      "autoindent when enter new blok
@@ -42,19 +39,26 @@ set expandtab 	    "this will change 1 tab = 4 space
 set belloff=all     "no beeping
 set number  " enable line numbering   
 
-set background=dark
-
-colorscheme afterglow "no
+"set background=dark
+colorscheme afterglow 
 set showcmd "this will show command in line
 
 " Make vim use the system clipboard:
 set clipboard^=unnamed,unnamedplus
 
-set colorcolumn=80 " verticle line for danger zone
+" verticle line for danger zone
+set colorcolumn=80 
 highlight ColorColumn ctermbg=red guibg=red
 
 "following line will disable Syntaxt check
 autocmd VimEnter * SyntasticToggleMode
+
+" This will wrap line over when pressing left or right 
+" <> for insert mode [] for normal mod and h,l for h l keys
+set whichwrap+=<,>,h,l,[,]
+
+let g:airline_theme='angr'
+
 "++++++++++++++++++++++mapping only area+++++++++++++++"
 imap <C-j> <Up>
 imap <C-h> <Left>
