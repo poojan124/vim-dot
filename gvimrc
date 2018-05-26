@@ -51,7 +51,8 @@ set colorcolumn=80
 highlight ColorColumn ctermbg=red guibg=red
 
 "following line will disable Syntaxt check
-autocmd VimEnter * SyntasticToggleMode
+"gvim load both vimrc and gvimrc so toggle 2 times :(
+"autocmd VimEnter * SyntasticToggleMode 
 
 " This will wrap line over when pressing left or right 
 " <> for insert mode [] for normal mod and h,l for h l keys
