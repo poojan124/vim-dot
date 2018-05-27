@@ -29,6 +29,10 @@ if has('win32')
     set guifont=Lucida_Console:h11
 endif
 
+"toggle between insert and nomal mode with Ctrl+space
+nnoremap <C-space> i
+imap <C-space> <Esc>
+
 "spacing and tab
 set backspace=2
 set tabstop=4 	    "tabspace
