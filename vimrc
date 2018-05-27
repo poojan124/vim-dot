@@ -71,9 +71,9 @@ imap <C-l> <Right>
 " ctrl+shift+p to run current python file
 map <C-S-p> :w<CR> :!python %<CR>
 if has('win32')
-    map <C-b> :!cmd.exe<CR>
+    map <C-b> :silent !cmd.exe<CR>
 else
-    map <C-b> :!bash<CR>
+    map <C-b> :silent !gnome-terminal<CR>
 endif
 
 " normal copy/paste
