@@ -1,4 +1,3 @@
-
 set nocompatible              " be iMproved, required
 filetype off                  " required
 set noundofile
@@ -73,7 +72,7 @@ map <C-S-p> :w<CR> :!python %<CR>
 if has('win32')
     map <C-b> :silent !cmd.exe<CR>
 else
-    map <C-b> :silent !gnome-terminal<CR>
+    map <C-b> :silent !bash<CR>
 endif
 
 " normal copy/paste
@@ -85,6 +84,11 @@ map <C-z> <Esc>
 imap <C-z> <Esc>ui
 " Select all text
 nmap <C-a> ggVG
+
+"toggle between insert and nomal mode with Ctrl+space
+nnoremap <C-space> i
+imap <C-space> <Esc>
+
 
 "++++++++++++++++++++++ends++++++++++++++++++++++++++++"
 
