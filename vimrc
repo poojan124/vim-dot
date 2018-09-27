@@ -69,10 +69,12 @@ imap <C-l> <Right>
 
 " ctrl+shift+p to run current python file
 map <C-S-p> :w<CR> :!python %<CR>
+" ctrl + b will pop up terminal.
+" we need to redraw screen after silent because silent leaves screen blank. :redr do the work.
 if has('win32')
-    map <C-b> :silent !cmd.exe<CR>
+    map <C-b> :silent !cmd.exe<CR> :redr!<CR>
 else
-    map <C-b> :silent !bash<CR>
+    map <C-b> :silent !bash<CR> :redr!<CR>
 endif
 
 " normal copy/paste
