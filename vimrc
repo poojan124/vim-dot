@@ -22,6 +22,7 @@ Plugin 'danilo-augusto/vim-afterglow'
 Plugin 'jceb/vim-orgmode'
 "Plugin 'davidhalter/jedi-vim'
 Plugin 'ervandew/supertab'
+Plugin 'vim-airline/vim-airline'
 call vundle#end()            " required
 """"""""""""""""""VUNDLE END"""""""""""""""""""""""""""
 filetype plugin indent on    " required
@@ -91,6 +92,11 @@ nmap <C-a> ggVG
 nnoremap <C-space> i
 imap <C-space> <Esc>
 
+" add new tab
+map <C-t><up> :tabr<cr>
+map <C-t><down> :tabl<cr>
+map <C-t><left> :tabp<cr>
+map <C-t><right> :tabn<cr>
 
 "++++++++++++++++++++++ends++++++++++++++++++++++++++++"
 
