@@ -87,14 +87,9 @@ nnoremap <C-space> i
 imap <C-space> <Esc>
 
 " add new tab
-map <C-t><up> :tabr<cr>
-map <C-t><down> :tabl<cr>
-map <C-t><left> :tabp<cr>
-map <C-t><right> :tabn<cr>
-
-"++++++++++++++++++++++ends++++++++++++++++++++++++++++"
-
-
+map <C-left> :tabprevious<CR>
+map <C-right> :tabnext<CR>
+map <C-t> :tabnew<cr>
 "++++++++++++++++++++folding++++++++++++++++++++++++++++
 "this will save and load fold when closing
 "augroup AutoSaveFolds
