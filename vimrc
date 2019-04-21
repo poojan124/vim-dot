@@ -63,10 +63,6 @@ autocmd VimEnter * SyntasticToggleMode
 set whichwrap+=<,>,h,l,[,]
 
 "++++++++++++++++++++++mapping only area+++++++++++++++"
-imap <C-j> <Up>
-imap <C-h> <Left>
-imap <C-k> <Down>
-imap <C-l> <Right>
 
 " ctrl+shift+p to run current python file
 map <C-S-p> :w<CR> :!python %<CR>
@@ -93,8 +89,8 @@ nnoremap <C-space> i
 imap <C-space> <Esc>
 
 " add new tab
-map <C-left> :tabprevious<CR>
-map <C-right> :tabnext<CR>
+map <C-l> :tabprevious<CR>
+map <C-h> :tabnext<CR>
 map<C-t> :tabnew<cr>
 
 "++++++++++++++++++++++ends++++++++++++++++++++++++++++"
