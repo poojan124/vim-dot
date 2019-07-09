@@ -4,6 +4,7 @@ set noundofile
 set nobackup
 set nowritebackup
 set noswapfile
+
 " set the runtime path to include Vundle and initialize
 """""""""""""""""""" VUNDLE AREA"""""""""""""""""""""""
 if has('win32')
@@ -47,6 +48,8 @@ set belloff=all     "no beeping
 set number  " enable line numbering   
 
 set showcmd "this will show command in line
+
+set background=dark "get rid of annoying dark blue text.
 
 " Make vim use the system clipboard:
 set clipboard^=unnamed,unnamedplus
